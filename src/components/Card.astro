@@ -1,61 +1,107 @@
 ---
 interface Props {
-	title: string;
-	body: string;
-	href: string;
+    title: string;
+    description: string;
+    img: string;
+    url: string;
+    paid: boolean;
 }
 
-const { href, title, body } = Astro.props;
+const { title, description, img, url, paid } = Astro.props;
+const cardClass = paid ? 'paid-class' : 'free-class';
+const cardText = paid ? 'Paid' : 'Free';
 ---
 
-<li class="link-card">
-	<a href={href}>
-		<h2>
-			{title}
-			<span>&rarr;</span>
-		</h2>
-		<p>
-			{body}
-		</p>
-	</a>
-</li>
+<div class="container">
+    <div class="image-container">
+        <a href="#">
+            <img src=`${img}` alt=`${title}` />
+        </a>
+    </div>
+    <div>
+        <h2>{ title }</h2>
+        <div class=`${cardClass}`>
+            { cardText }
+        </div>
+        <p>{ description }</p>
+        <a class="docs" href=`${url}` target="_blank">Visitar documentación</a>
+    </div>
+</div>
+
 <style>
-	.link-card {
-		list-style: none;
-		display: flex;
-		padding: 1px;
-		background-color: #23262d;
-		background-image: none;
-		background-size: 400%;
-		border-radius: 7px;
-		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
-	}
-	.link-card > a {
-		width: 100%;
-		text-decoration: none;
-		line-height: 1.4;
-		padding: calc(1.5rem - 1px);
-		border-radius: 8px;
-		color: white;
-		background-color: #23262d;
-		opacity: 0.8;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1.25rem;
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-	}
-	p {
-		margin-top: 0.5rem;
-		margin-bottom: 0;
-	}
-	.link-card:is(:hover, :focus-within) {
-		background-position: 0;
-		background-image: var(--accent-gradient);
-	}
-	.link-card:is(:hover, :focus-within) h2 {
-		color: rgb(var(--accent-light));
-	}
+    .container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        min-height: 10rem;
+        
+    }
+
+    .image-container {
+        flex-shrink: 0;
+        margin-right: 16px;
+        width: 100px; /* Adjust width as needed */
+        height: 100%;
+    }
+
+    .image-container img {
+        width: 100%;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 1.5em;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 80%;
+        color: #d4d4d4;
+    }
+
+    .free-class {
+        color: rgb(22, 165, 22);
+        font-weight: bold;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+
+    .paid-class{
+        color: red;
+        font-weight: bold;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+
+    p {
+        margin: 8px 0;
+        font-size: large;
+        color: #ffffff;
+    }
+
+    .docs {
+        position: absolute;
+        bottom: 0;
+        margin-top: auto;
+        padding: 8px 0; 
+        align-self: flex-end;
+        color: #007bff;
+        text-decoration: none;
+        position: absolute;
+        margin-bottom: 15px;
+    }
+
+    .docs:hover {
+        text-decoration: underline;
+    }
 </style>
