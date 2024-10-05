@@ -1,9 +1,9 @@
 ---
 title: PostMan
 img: Postman.png
-description: Herramienta para realizar solicitudes a las APIS.
+description: APIS request tool.
 url: https://www.postman.com/
 paid: false
 ---
 
-Postman es una plataforma de colaboración para el desarrollo de APIs que **simplifica cada paso del ciclo de vida de una API** y optimiza la creación, prueba y documentación de las mismas. Con una **interfaz intuitiva** y **herramientas poderosas**, Postman permite a los desarrolladores diseñar y simular solicitudes HTTP, gestionar entornos y variables, automatizar pruebas y monitorear el rendimiento de las APIs. Además, facilita la colaboración en equipo mediante la compartición de colecciones y la integración con sistemas de control de versiones y CI/CD. Postman es una herramienta esencial para cualquier desarrollador que trabaje con **APIs**, ya que **mejora la eficiencia y la calidad del desarrollo y mantenimiento de servicios web**.
+Postman is a collaboration platform for the development of APIS that **simplifies each step of the life cycle of an API** and optimizes the creation, test and documentation of them. With a **intuitive interface** and **powerful tools**, postman allows developers to design and simulate HTTP requests, manage environments and variables, automate tests and monitor the performance of APIs. In addition, it facilitates team collaboration by sharing collections and integration with version control systems and CI/CD. Postman is an essential tool for any developer that works with **APIS**, since **improves the efficiency and quality of the development and maintenance of web services**.

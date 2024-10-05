@@ -1,5 +1,6 @@
 ---
-import Hero from '../components/Hero.astro';
+import Title from '../components/Title.astro';
+import ViewTransitions from 'astro/components/ViewTransitions.astro';
 
 interface Props {
 	title: string;
@@ -19,7 +20,8 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<Hero />
+		<ViewTransitions />
+		<Title />
 		<slot />
 	</body>
 </html>
@@ -38,6 +40,11 @@ const { title } = Astro.props;
 	html {
 		font-family: system-ui, sans-serif;
 		background: linear-gradient(to right, #323946, #13151a);
+	}
+	body{
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 1rem;
 	}
 	code {
 		font-family:

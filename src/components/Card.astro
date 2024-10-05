@@ -5,17 +5,21 @@ interface Props {
     img: string;
     url: string;
     paid: boolean;
+    slug: string;
 }
 
-const { title, description, img, url, paid } = Astro.props;
+const { title, description, img, url, paid, slug } = Astro.props;
 const cardClass = paid ? 'paid-class' : 'free-class';
 const cardText = paid ? 'Paid' : 'Free';
 ---
 
 <div class="container">
     <div class="image-container">
-        <a href="#">
-            <img src=`${img}` alt=`${title}` />
+        <a href=`/tool/${slug}`>
+            <img
+             transition:name=`img-${slug}`
+             src=`${img}` 
+             alt=`${title}` />
         </a>
     </div>
     <div>
@@ -24,7 +28,7 @@ const cardText = paid ? 'Paid' : 'Free';
             { cardText }
         </div>
         <p>{ description }</p>
-        <a class="docs" href=`${url}` target="_blank">Visitar documentación</a>
+        <a class="docs" href=`${url}` target="_blank">Visit official site</a>
     </div>
 </div>
 
@@ -44,7 +48,7 @@ const cardText = paid ? 'Paid' : 'Free';
     .image-container {
         flex-shrink: 0;
         margin-right: 16px;
-        width: 100px; /* Adjust width as needed */
+        width: 100px;
         height: 100%;
     }
 

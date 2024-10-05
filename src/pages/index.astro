@@ -22,6 +22,7 @@ const tools = await getCollection('tools');
 							img={img}
 							url={url}
 							paid={paid}
+							slug={slug}
 						/>
 					)
 				})
@@ -31,11 +32,6 @@ const tools = await getCollection('tools');
 </Layout>
 
 <style>
-	main {
-		max-width: 1200px;
-		margin: 0 auto;
-		padding: 0 1rem;
-	}
 	.tools-cards {
 		margin-top: 4rem;
 		display: grid;

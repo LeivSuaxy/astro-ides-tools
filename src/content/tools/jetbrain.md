@@ -1,9 +1,9 @@
 ---
 title: JetBrains
 img: Jetbrains.png
-description: Herramientas para el desarrollo de software profesional.
+description: Tools for the development of professional software.
 url: https://www.jetbrains.com
 paid: true
 ---
 
-**JetBrains** ofrece una suite de herramientas de desarrollo de software que son reconocidas por su **alta calidad y eficiencia**. Entre sus productos más destacados se encuentran IntelliJ IDEA, PyCharm, WebStorm, y ReSharper, cada uno diseñado para __optimizar el flujo de trabajo__ de los desarrolladores en diferentes lenguajes y plataformas. Estas herramientas proporcionan características avanzadas como autocompletado inteligente, refactorización de código, depuración y pruebas integradas, y soporte para una amplia gama de tecnologías y frameworks. Además, JetBrains se enfoca en mejorar la productividad del desarrollador mediante interfaces de usuario intuitivas y personalizables, así como integraciones con sistemas de control de versiones y herramientas de CI/CD. Con un **fuerte compromiso con la innovación y la calidad**, JetBrains se ha convertido en una elección **preferida** para desarrolladores profesionales en todo el mundo.
+**Jetbrains** offers a software development tools suite that are recognized for their **high quality and efficiency**. Among its most prominent products are Intellij Idea, Pycharm, Webstorm, and Resharper, each designed to __optimize the workflow__ of developers in different languages ​​and platforms. These tools provide advanced characteristics such as intelligent self -fulfilling, code refactorization, purification and integrated tests, and support for a wide range of technologies and frameworks. In addition, Jetbrains focuses on improving developer's productivity through intuitive and customizable user interfaces, as well as integrations with version control systems and IC/CD tools. With a **strong commitment to innovation and quality**, Jetbrains has become a **preferred choice** for professional developers worldwide.

@@ -1,0 +1,83 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+    const tools = await getCollection('tools')
+
+    return tools.map((tool) => ({
+        params: {id: tool.slug},
+        props: {tool}
+    }))
+}
+
+const { tool } = Astro.props
+const { data, slug } = tool
+const { title, description, img, url, paid } = data
+
+const { Content } = await render(tool)
+---
+
+<Layout title={`${title} - Tools`}>
+    <div class="image-container">
+        <aside>
+            <img
+            transition:animate="slide"
+             transition:name=`img-${slug}` 
+             src={`/${img}`} 
+             alt={title} 
+             />
+        </aside>
+    </div>
+
+    <main>
+        <h1>{title}</h1>
+        <div class="Content">
+            <Content />
+        </div>
+        <a href="/"> ← Go Back</a>
+    </main>
+</Layout>
+
+<style>
+    .image-container {
+        float: left;
+        width: 200px;
+        margin-right: 4rem;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .image-container aside {
+        flex: 0 0 200px;
+        margin-right: 20px;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    main {
+        flex: 1;
+        color: white;
+    }
+
+    a {
+        font-size: 1.2rem;
+        color: rgb(0, 217, 255);
+        float: right;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+    }
+
+    a:hover {
+        transform: translateX(-10px);
+        transition: transform 0.3s ease;
+    }
+
+    .Content {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
