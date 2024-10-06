@@ -1,7 +1,7 @@
 ---
 title: PostgreSQL
 img: Postgresql.png
-description: SQL date base manager.
+description: SQL data base manager.
 url: https://www.postgresql.org/
 paid: false
 ---
