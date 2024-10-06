@@ -4,25 +4,24 @@ import Layout from "../../layouts/Layout.astro";
 import Title from "../../components/Title.astro";
 
 export async function getStaticPaths() {
-    const tools = await getCollection('tools')
+    const languages = await getCollection('languages')
 
-    return tools.map((tool) => ({
-        params: {id: tool.slug},
-        props: {tool}
+    return languages.map((language) => ({
+        params: {id: language.slug},
+        props: {language}
     }))
 }
 
-const { tool } = Astro.props
-const { data, slug } = tool
-const { title, img} = data
+const { language } = Astro.props
+const { data, slug } = language
+const { title, img, destination } = data
 
-const { Content } = await render(tool)
+const { Content } = await render(language)
 ---
 
-<Layout title={`${title} - Tools`}>
+<Layout title={`${title} - Language`}>
     <Title>
-        <span>Tools For</span><br>
-        <span>Developing</span> 💻
+        <span>Languages</span> 🛠
     </Title>
     <div class="image-container">
         <aside>
@@ -37,10 +36,11 @@ const { Content } = await render(tool)
 
     <main>
         <h1>{title}</h1>
+        <h2>Destination: <span style="color: green">{destination}</span></h2>
         <div class="Content">
             <Content />
         </div>
-        <a href="/#tools"> ← Go Back</a>
+        <a href="/#languages"> ← Go Back</a>
     </main>
 </Layout>
 

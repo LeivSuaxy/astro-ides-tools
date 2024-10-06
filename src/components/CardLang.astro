@@ -1,21 +1,33 @@
 ---
 interface Props {
     title: string;
+    destination: string;
+    difficulty: string;
     description: string;
     img: string;
-    url: string;
-    paid: boolean;
+    docs: string;
     slug: string;
 }
 
-const { title, description, img, url, paid, slug } = Astro.props;
-const cardClass = paid ? 'paid-class' : 'free-class';
-const cardText = paid ? 'Paid' : 'Free';
+const { title, destination, difficulty, description, img, docs, slug } = Astro.props;
+let cardClass = 'medium-class';
+let cardText = 'unknown';
+
+if (difficulty == 'Easy'){
+    cardClass = 'easy-class';
+    cardText = 'Easy';
+} else if(difficulty == 'Medium'){
+    cardClass = 'medium-class';
+    cardText = 'Medium';
+} else if (difficulty == 'Hard') {
+    cardClass = 'hard-class';
+    cardText = 'Hard'
+}
 ---
 
 <div class="container">
     <div class="image-container">
-        <a href=`/tool/${slug}`>
+        <a href=`/language/${slug}`>
             <img
              transition:name=`img-${slug}`
              src=`${img}` 
@@ -28,7 +40,7 @@ const cardText = paid ? 'Paid' : 'Free';
             { cardText }
         </div>
         <p>{ description }</p>
-        <a class="docs" href=`${url}` target="_blank">Visit official site</a>
+        <a class="docs" href=`${docs}` target="_blank">Visit official site</a>
     </div>
 </div>
 
@@ -77,7 +89,7 @@ const cardText = paid ? 'Paid' : 'Free';
         color: #d4d4d4;
     }
 
-    .free-class {
+    .easy-class {
         color: rgb(22, 165, 22);
         font-weight: bold;
         position: absolute;
@@ -85,7 +97,15 @@ const cardText = paid ? 'Paid' : 'Free';
         right: 16px;
     }
 
-    .paid-class{
+    .medium-class {
+        color: rgb(243, 151, 14);
+        font-weight: bold;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+
+    .hard-class{
         color: red;
         font-weight: bold;
         position: absolute;

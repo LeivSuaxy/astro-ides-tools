@@ -1,15 +1,22 @@
 ---
 import Card from '../components/Card.astro';
+import CardLang from '../components/CardLang.astro';
 import Layout from '../layouts/Layout.astro';
+import Title from '../components/Title.astro';
 
 import { getCollection } from 'astro:content';
 
 const tools = await getCollection('tools');
+const languages = await getCollection('languages');
 ---
 
 <Layout title="Favourite Tools.">
 	<main>
-		<div class="tools-cards">
+		<Title>
+			<span>Tools For</span><br>
+			<span>Developing</span> 💻
+		</Title>
+		<div id="tools" class="tools-cards">
 			{
 				tools.map((tool: { slug: any; data: any; }) => {
 					const {slug, data} = tool
@@ -28,12 +35,36 @@ const tools = await getCollection('tools');
 				})
 			}
 		</div>
+		<Title>
+			<span>Languages</span> 🛠
+		</Title>
+		<div id="languages" class="tools-cards">
+			{
+				languages.map((language: { slug: any; data: any; }) => {
+					const {slug, data} = language
+					const {title, destination, difficulty, description, img, docs} = data
+
+					return (
+						<CardLang
+							title={title}
+							description={description}
+							img={img}
+							docs={docs}
+							difficulty={difficulty}
+							destination={destination}
+							slug={slug}
+						/>
+					)
+				})
+			}
+		</div>
 	</main>
 </Layout>
 
 <style>
 	.tools-cards {
 		margin-top: 4rem;
+		margin-bottom: 4rem;
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 16px;
