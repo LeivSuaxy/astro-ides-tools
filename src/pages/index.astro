@@ -5,9 +5,11 @@ import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 
 import { getCollection } from 'astro:content';
+import FrameworkCard from '../components/FrameworkCard.astro';
 
 const tools = await getCollection('tools');
 const languages = await getCollection('languages');
+const frameworks = await getCollection('frameworks');
 ---
 
 <Layout title="Favourite Tools.">
@@ -52,6 +54,30 @@ const languages = await getCollection('languages');
 							docs={docs}
 							difficulty={difficulty}
 							destination={destination}
+							slug={slug}
+						/>
+					)
+				})
+			}
+		</div>
+		<Title>
+			<span>Frameworks</span> 💼
+		</Title>
+		<!-- Astro Special Card Here! -->
+		<div id="frameworks" class="tools-cards">
+			{
+				frameworks.map((framework: { slug: any; data: any; }) => {
+					const {slug, data} = framework
+					const {title, language, difficulty, description, img, docs} = data
+
+					return (
+						<FrameworkCard
+							title={title}
+							description={description}
+							img={img}
+							docs={docs}
+							difficulty={difficulty}
+							language={language}
 							slug={slug}
 						/>
 					)
