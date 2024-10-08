@@ -3,6 +3,7 @@ import Card from '../components/Card.astro';
 import CardLang from '../components/CardLang.astro';
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
+import AstroHero from '../components/AstroHero.astro';
 
 import { getCollection } from 'astro:content';
 import FrameworkCard from '../components/FrameworkCard.astro';
@@ -64,6 +65,7 @@ const frameworks = await getCollection('frameworks');
 			<span>Frameworks</span> 💼
 		</Title>
 		<!-- Astro Special Card Here! -->
+		<AstroHero />
 		<div id="frameworks" class="tools-cards">
 			{
 				frameworks.map((framework: { slug: any; data: any; }) => {

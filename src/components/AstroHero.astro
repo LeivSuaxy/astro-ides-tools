@@ -2,7 +2,56 @@
 ---
 
 <!-- Building! -->
+<h2><span>This site has been built with</span> 🚀</h2>
+<a href="/Astro" class="banner-link">
+    <div class="banner">
+        <div class="content">
+            <h1>Fast like a rocket!</h1>
+        </div>
+    </div>
+</a>
 
 <style>
 
+    .banner-link {
+        text-decoration: none;
+        
+    }
+
+    .banner-link:hover .banner {
+        transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    h2 {
+        font-size: 3rem;
+        text-align: center;
+        margin-top: 2rem;
+        color: whitesmoke
+    }
+
+    h2 span {
+        background: linear-gradient(to right, #91086a,#921a70, #98347b,#9c4684,#784876);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .banner {
+        height: 400px;
+        background-image: url('AstroBanner.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 12px;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .content {
+        display: flex;
+        justify-content: left;
+        margin-left: 30px;
+        left: 15px;
+        text-align: center;
+    }
 </style>
