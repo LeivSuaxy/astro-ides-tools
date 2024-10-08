@@ -4,24 +4,24 @@ import Layout from "../../layouts/Layout.astro";
 import Title from "../../components/Title.astro";
 
 export async function getStaticPaths() {
-    const languages = await getCollection('languages')
+    const frameworks = await getCollection('frameworks');
 
-    return languages.map((language) => ({
-        params: {id: language.slug},
-        props: {language}
+    return frameworks.map((framework) => ({
+        params: {id: framework.slug},
+        props: {framework}
     }))
 }
 
-const { language } = Astro.props
-const { data, slug } = language
-const { title, img, destination } = data
+const { framework } = Astro.props
+const { data, slug } = framework
+const { title, img, language, destination } = data
 
-const { Content } = await render(language)
+const { Content } = await render(framework)
 ---
 
-<Layout title={`${title} - Language`}>
+<Layout title={`${title} - Framework`}>
     <Title>
-        <span>Languages</span> 🛠
+        <span>Frameworks</span> 💼
     </Title>
     <div class="image-container">
         <aside>
@@ -35,11 +35,12 @@ const { Content } = await render(language)
 
     <main>
         <h1>{title}</h1>
-        <h2>Destination: <span style="color: green">{destination}</span></h2>
+        <h2>Language: <span style="color: green">{language}</span></h2>
+        <h2>Destination: <span style="color: orange">{destination}</span></h2>
         <div class="Content">
             <Content />
         </div>
-        <a href="/#languages"> ← Go Back</a>
+        <a href="/#frameworks"> ← Go Back</a>
     </main>
 </Layout>
 

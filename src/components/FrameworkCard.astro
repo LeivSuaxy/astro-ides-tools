@@ -1,0 +1,137 @@
+---
+interface Props {
+    title: string;
+    language: string;
+    difficulty: string;
+    description: string;
+    img: string;
+    docs: string;
+    slug: string;
+}
+
+const { title, language, difficulty, description, img, docs, slug } = Astro.props;
+let cardClass = 'medium-class';
+let cardText = 'unknown';
+
+if (difficulty == 'Easy'){
+    cardClass = 'easy-class';
+    cardText = 'Easy';
+} else if(difficulty == 'Medium'){
+    cardClass = 'medium-class';
+    cardText = 'Medium';
+} else if (difficulty == 'Hard') {
+    cardClass = 'hard-class';
+    cardText = 'Hard'
+}
+---
+
+<div class="container">
+    <div class="image-container">
+        <a href=`/framework/${slug}`>
+            <img
+             transition:name=`img-${slug}`
+             src=`${img}` 
+             alt=`${title}` />
+        </a>
+    </div>
+    <div>
+        <h2>{ title }</h2>
+        <div class=`${cardClass}`>
+            { cardText }
+        </div>
+        <p>{ description }</p>
+        <a class="docs" href=`${docs}` target="_blank">Visit official site</a>
+    </div>
+</div>
+
+<style>
+    .container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding: 16px;
+        border-radius: 8px;
+        margin-bottom: 16px;
+        min-height: 10rem;
+        
+    }
+
+    .image-container {
+        flex-shrink: 0;
+        margin-right: 16px;
+        width: 100px;
+        height: 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .image-container:hover{
+        transform: rotate(10deg);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .image-container img {
+        width: 100%;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 1.5em;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        max-width: 90%;
+        color: #d4d4d4;
+    }
+
+    .easy-class {
+        color: rgb(22, 165, 22);
+        font-weight: bold;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+
+    .medium-class {
+        color: rgb(243, 151, 14);
+        font-weight: bold;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+
+    .hard-class{
+        color: red;
+        font-weight: bold;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+    }
+
+    p {
+        margin: 8px 0;
+        font-size: large;
+        color: #ffffff;
+    }
+
+    .docs {
+        position: absolute;
+        bottom: 0;
+        margin-top: auto;
+        padding: 8px 0; 
+        align-self: flex-end;
+        color: #007bff;
+        text-decoration: none;
+        position: absolute;
+        margin-bottom: 15px;
+    }
+
+    .docs:hover {
+        text-decoration: underline;
+    }
+</style>

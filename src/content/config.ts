@@ -21,4 +21,16 @@ const languages = defineCollection({
     })
 })
 
-export const collections = { tools, languages };
+const frameworks = defineCollection({
+    schema: z.object({
+        title: z.string(),
+        language: z.string(),
+        difficulty: z.string(),
+        description: z.string(),
+        img: z.string(),
+        destination: z.string(),
+        docs: z.string().url(),
+    })
+})
+
+export const collections = { tools, languages, frameworks };
