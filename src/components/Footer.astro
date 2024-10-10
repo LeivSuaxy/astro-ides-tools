@@ -1,0 +1,49 @@
+---
+import Links from "./Links.astro"
+---
+
+<footer>
+    <div class="links">
+        <Links />
+    </div>
+    <div class="built">
+        <p>This site has been elaborated for educational purposes and learning the technologies used in the same</p>
+    </div>
+    <div class="rigths">
+        <p>© 2024 LeivSuaxy. Almost all rights reserved</p>
+    </div>
+    
+</footer>
+
+<style>
+    footer {
+        display: grid;
+        border-top: 1px solid rgba(0, 0, 0, 0.5);
+        color: white;
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        grid-column: 3;
+        grid-row: 2;
+        width: 100%;
+    }
+
+    .built {
+        display: flex;
+        grid-column: 1;
+        grid-row: 1;
+        width: 40%;
+    }
+
+    .rigths {
+        display: flex;
+        grid-column: 1;
+        grid-row: 2;
+    }
+</style>

@@ -1,7 +1,7 @@
 ---
 title: Docker
 img: Docker.png
-description: Tool for safe display.
+description: Tool for safe deploy.
 url: https://www.docker.com/
 paid: false
 ---
