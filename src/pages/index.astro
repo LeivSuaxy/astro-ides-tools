@@ -4,6 +4,7 @@ import CardLang from '../components/CardLang.astro';
 import Layout from '../layouts/Layout.astro';
 import Title from '../components/Title.astro';
 import AstroHero from '../components/AstroHero.astro';
+import GitHubRepo from '../components/GitHubRepo.astro';
 
 import { getCollection } from 'astro:content';
 import FrameworkCard from '../components/FrameworkCard.astro';
@@ -19,6 +20,9 @@ const frameworks = await getCollection('frameworks');
 			<span>Tools For</span><br>
 			<span>Developing</span> 💻
 		</Title>
+		<div class="button-repo">
+			<GitHubRepo />
+		</div>
 		<div id="tools" class="tools-cards">
 			{
 				tools.map((tool: { slug: any; data: any; }) => {
@@ -96,7 +100,15 @@ const frameworks = await getCollection('frameworks');
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: 16px;
+		
 	}
+
+	.button-repo {
+		margin-top: 3rem;
+		display: flex;
+		justify-content: center;
+	}
+
 	@media (max-width: 800px) {
 		.tools-cards {
 			grid-template-columns: 1fr;

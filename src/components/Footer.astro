@@ -10,7 +10,12 @@ import Links from "./Links.astro"
         <p>This site has been elaborated for educational purposes and learning the technologies used in the same</p>
     </div>
     <div class="rigths">
-        <p>© 2024 LeivSuaxy. Almost all rights reserved</p>
+        <p>© 2024 
+            <a href="https://github.com/LeivSuaxy" target="_blank">
+                LeivSuaxy
+            </a>
+            . Almost all rights reserved
+        </p>
     </div>
     
 </footer>
@@ -30,7 +35,7 @@ import Links from "./Links.astro"
         justify-content: center;
         gap: 1rem;
         grid-column: 3;
-        grid-row: 2;
+        grid-row: 1;
         width: 100%;
     }
 
@@ -45,5 +50,14 @@ import Links from "./Links.astro"
         display: flex;
         grid-column: 1;
         grid-row: 2;
+    }
+
+    .rigths p a {
+        text-decoration: none;
+        color: whitesmoke;
+    }
+
+    .rigths p a:hover{
+        color: rgb(48, 48, 255);
     }
 </style>
