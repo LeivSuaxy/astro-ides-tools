@@ -6,9 +6,6 @@ import Links from "./Links.astro"
     <div class="links">
         <Links />
     </div>
-    <div class="built">
-        <p>This site has been elaborated for educational purposes and learning the technologies used in the same</p>
-    </div>
     <div class="rigths">
         <p>© 2024 
             <a href="https://github.com/LeivSuaxy" target="_blank">
@@ -22,8 +19,6 @@ import Links from "./Links.astro"
 
 <style>
     footer {
-        display: grid;
-        border-top: 1px solid rgba(0, 0, 0, 0.5);
         color: white;
         width: 100%;
         height: auto;
@@ -33,23 +28,12 @@ import Links from "./Links.astro"
     .links {
         display: flex;
         justify-content: center;
-        gap: 1rem;
-        grid-column: 3;
-        grid-row: 1;
         width: 100%;
     }
 
-    .built {
-        display: flex;
-        grid-column: 1;
-        grid-row: 1;
-        width: 40%;
-    }
-
     .rigths {
+        justify-content: center;
         display: flex;
-        grid-column: 1;
-        grid-row: 2;
     }
 
     .rigths p a {
