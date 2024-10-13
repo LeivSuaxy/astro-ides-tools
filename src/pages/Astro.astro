@@ -3,5 +3,91 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Astro">
-    <h1>Hello Astro</h1>
+    <img class="center-icon" src="Astro.png" alt="astro logo" />
+    <h1>Astro</h1>
+    <p>Astro is a modern framework of static websites construction that focuses
+        in speed and simplicity. One of Astro's main advantages is
+        Ability to generate extremely fast websites by eliminating JavaScript
+        unnecessary on the client side. This is achieved through the technique of
+        "Island Architecture", where only the interactive parts of the page load
+        JavaScript, while the rest of the content is delivered as static HTML.</p>
+
+    <p>Among the benefits of using star:</p>
+    <ul>
+        <li>
+            <strong>
+                Higher performance:
+            </strong>
+            By reducing the amount of JavaScript in the client, the sites built with ASTRO load faster and offer a better user experience.
+        </li>
+        <li>
+            <strong>
+                Ease of use:
+            </strong>
+            Astro allows developers to use components of different frameworks such as React, Vue, Svelte and more, all in the same project.
+        </li>
+        <li>
+            <strong>
+                SEO IMPROVED:
+            </strong>
+            When generating static HTML, Astro sites are easier to track and index for search engines, thus improving SEO.
+        </li>
+        <li>
+            <strong>
+                Flexibility:
+            </strong>
+            Astro is compatible with a wide range of tools and plugins, which allows developers to customize and extend their projects according to their needs.
+        </li>
+    </ul>
+    <p> 
+        This website has been developed with this framework, using teaching videos as a guide
+        of the Spanish Streamer Midudev. You can see the source code of this page in my github repository found in the Footer.
+    </p>
+    <div class="button-container">
+        <a href="/" class="button-back">
+            Go Back
+        </a>
+    </div>
+    
 </Layout>
+
+<style>
+    .center-icon {
+        display: block;
+        margin: 0 auto;
+        width: 200px;
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 3rem;
+        background: linear-gradient(to top, #ff3502, #ff4618, #ff5f37, #ff9277);
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    
+    li {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        color: whitesmoke;
+    }
+
+    p {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+        color: whitesmoke;
+    }
+
+    .button-back{
+        background: linear-gradient(to top, #ff3502, #ff4618, #ff5f37, #ff9277);
+        color: black;
+        display: block;
+        margin: 2rem auto;
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        text-align: center;
+        border-radius: 5px;
+        text-decoration: none;
+        width: 8%;
+    }
+</style>
